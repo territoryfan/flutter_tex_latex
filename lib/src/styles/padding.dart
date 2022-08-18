@@ -21,18 +21,18 @@ class TeXViewPadding {
   final int? all;
 
   const TeXViewPadding.all(this.all, {this.sizeUnit})
-      : top = null,
-        bottom = null,
-        right = null,
-        left = null;
+      : this.top = null,
+        this.bottom = null,
+        this.right = null,
+        this.left = null;
 
   const TeXViewPadding.only(
       {this.sizeUnit, this.top, this.bottom, this.right, this.left})
-      : all = null;
+      : this.all = null;
 
   /// It'll provide CSS margin code.
   String getPadding() {
-    if (all != null) {
+    if (this.all != null) {
       return "padding: ${getSizeWithUnit(all, sizeUnit)};";
     } else {
       return """padding: ${getSizeWithUnit(top, sizeUnit)} ${getSizeWithUnit(right, sizeUnit)} ${getSizeWithUnit(bottom, sizeUnit)} ${getSizeWithUnit(left, sizeUnit)};""";

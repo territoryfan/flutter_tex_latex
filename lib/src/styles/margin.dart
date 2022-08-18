@@ -23,32 +23,32 @@ class TeXViewMargin {
   final String? zeroAuto;
 
   const TeXViewMargin.all(this.all, {this.sizeUnit})
-      : zeroAuto = null,
-        top = null,
-        bottom = null,
-        right = null,
-        left = null;
+      : this.zeroAuto = null,
+        this.top = null,
+        this.bottom = null,
+        this.right = null,
+        this.left = null;
 
   const TeXViewMargin.only(
       {this.sizeUnit, this.top, this.bottom, this.right, this.left})
-      : all = null,
-        zeroAuto = null;
+      : this.all = null,
+        this.zeroAuto = null;
 
   const TeXViewMargin.zeroAuto()
-      : zeroAuto = "0 auto",
-        sizeUnit = null,
-        all = null,
-        top = null,
-        bottom = null,
-        right = null,
-        left = null;
+      : this.zeroAuto = "0 auto",
+        this.sizeUnit = null,
+        this.all = null,
+        this.top = null,
+        this.bottom = null,
+        this.right = null,
+        this.left = null;
 
   /// It'll provide CSS margin code.
   String getMargin() {
-    if (all != null) {
+    if (this.all != null) {
       return "margin:${getSizeWithUnit(all, sizeUnit)};";
-    } else if (zeroAuto != null) {
-      return "margin:$zeroAuto;";
+    } else if (this.zeroAuto != null) {
+      return "margin:${this.zeroAuto};";
     } else {
       return """margin:${getSizeWithUnit(top, sizeUnit)} ${getSizeWithUnit(right, sizeUnit)} ${getSizeWithUnit(bottom, sizeUnit)} ${getSizeWithUnit(left, sizeUnit)};""";
     }

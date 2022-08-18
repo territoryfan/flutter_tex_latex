@@ -11,16 +11,16 @@ class TeXViewBorder {
   final TeXViewBorderDecoration? all;
 
   const TeXViewBorder.all(this.all)
-      : top = null,
-        bottom = null,
-        right = null,
-        left = null;
+      : this.top = null,
+        this.bottom = null,
+        this.right = null,
+        this.left = null;
 
   const TeXViewBorder.only({this.top, this.bottom, this.right, this.left})
-      : all = null;
+      : this.all = null;
 
   String getBorder() {
-    return all == null
+    return this.all == null
         ? """border-top:${top?.getBorderDecoration()};border-bottom:${bottom?.getBorderDecoration()};border-right:${right?.getBorderDecoration()};border-left:${left?.getBorderDecoration()};"""
         : """border:${all?.getBorderDecoration()};""";
   }
@@ -35,43 +35,43 @@ class TeXViewBorderDecoration {
       {this.borderWidth, this.borderStyle, this.borderColor});
 
   String getBorderDecoration() {
-    return "${borderWidth}px ${_getTeXViewBorderStyleValue(borderStyle)} ${getColor(borderColor)}";
+    return "${this.borderWidth}px ${_getTeXViewBorderStyleValue(borderStyle)} ${getColor(this.borderColor)}";
   }
 
   static String _getTeXViewBorderStyleValue(
       TeXViewBorderStyle? teXViewBorderStyle) {
     switch (teXViewBorderStyle) {
-      case TeXViewBorderStyle.none:
+      case TeXViewBorderStyle.None:
         return "none";
 
-      case TeXViewBorderStyle.hidden:
+      case TeXViewBorderStyle.Hidden:
         return "hidden";
 
-      case TeXViewBorderStyle.dotted:
+      case TeXViewBorderStyle.Dotted:
         return "dotted";
 
-      case TeXViewBorderStyle.dashed:
+      case TeXViewBorderStyle.Dashed:
         return "dashed";
 
-      case TeXViewBorderStyle.solid:
+      case TeXViewBorderStyle.Solid:
         return "solid";
 
-      case TeXViewBorderStyle.double:
+      case TeXViewBorderStyle.Double:
         return "double";
 
-      case TeXViewBorderStyle.groove:
+      case TeXViewBorderStyle.Groove:
         return "groove";
 
-      case TeXViewBorderStyle.ridge:
+      case TeXViewBorderStyle.Ridge:
         return "ridge";
 
-      case TeXViewBorderStyle.inset:
+      case TeXViewBorderStyle.Inset:
         return "inset";
 
-      case TeXViewBorderStyle.outset:
+      case TeXViewBorderStyle.Outset:
         return "outset";
 
-      case TeXViewBorderStyle.initial:
+      case TeXViewBorderStyle.Initial:
         return "initial";
 
       default:
@@ -89,10 +89,10 @@ class TeXViewBorderRadius {
   final int? all;
 
   const TeXViewBorderRadius.all(this.all, {this.sizeUnit})
-      : topLeft = null,
-        topRight = null,
-        bottomRight = null,
-        bottomLeft = null;
+      : this.topLeft = null,
+        this.topRight = null,
+        this.bottomRight = null,
+        this.bottomLeft = null;
 
   const TeXViewBorderRadius.only(
       {this.sizeUnit,
@@ -100,29 +100,29 @@ class TeXViewBorderRadius {
       this.topRight,
       this.bottomRight,
       this.bottomLeft})
-      : all = null;
+      : this.all = null;
 
   String getRadius() {
-    return all != null
+    return this.all != null
         ? """border-radius:$all${UnitHelper.getValue(sizeUnit)};"""
         : """border-radius:${_getRadiusValue(topLeft)} ${_getRadiusValue(topRight)} ${_getRadiusValue(bottomRight)} ${_getRadiusValue(bottomLeft)};""";
   }
 
   String _getRadiusValue(int? value) {
-    return (value ?? 0).toString() + UnitHelper.getValue(sizeUnit);
+    return "${(value ?? 0).toString() + "${UnitHelper.getValue(sizeUnit)}"}";
   }
 }
 
 enum TeXViewBorderStyle {
-  none,
-  hidden,
-  dotted,
-  dashed,
-  solid,
-  double,
-  groove,
-  ridge,
-  inset,
-  outset,
-  initial
+  None,
+  Hidden,
+  Dotted,
+  Dashed,
+  Solid,
+  Double,
+  Groove,
+  Ridge,
+  Inset,
+  Outset,
+  Initial
 }

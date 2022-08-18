@@ -56,25 +56,26 @@ class TeXViewStyle {
       this.borderRadius,
       this.textAlign,
       this.fontStyle})
-      : cascadingStyleSheets = null;
+      : this.cascadingStyleSheets = null;
 
   /// Styling TeXView with hard coded CSS e.g. "color:green;background-color:red".
   const TeXViewStyle.fromCSS(this.cascadingStyleSheets)
-      : padding = null,
-        margin = null,
-        sizeUnit = null,
-        height = null,
-        width = null,
-        elevation = null,
-        contentColor = null,
-        backgroundColor = null,
-        border = null,
-        borderRadius = null,
-        fontStyle = null,
-        textAlign = null;
+      : this.padding = null,
+        this.margin = null,
+        this.sizeUnit = null,
+        this.height = null,
+        this.width = null,
+        this.elevation = null,
+        this.contentColor = null,
+        this.backgroundColor = null,
+        this.border = null,
+        this.borderRadius = null,
+        this.fontStyle = null,
+        this.textAlign = null;
 
   String? initStyle() {
-    return cascadingStyleSheets ??
-        """$teXViewDefaultStyle ${padding?.getPadding() ?? ""}${margin?.getMargin() ?? ""}${borderRadius?.getRadius() ?? ""}${border?.getBorder() ?? ""}${height != null ? "height: " + getSizeWithUnit(height, sizeUnit) + ";" : ""}${width != null ? "width: " + getSizeWithUnit(width, sizeUnit) + ";" : ""}${elevation != null ? "box-shadow: " + getElevation(elevation, sizeUnit) + ";" : ""}${contentColor != null ? "color: " + getColor(contentColor) + ";" : ""}${backgroundColor != null ? "background-color: " + getColor(backgroundColor) + ";" : ""}${textAlign != null ? "text-align: " + TeXViewTextAlignHelper.getValue(textAlign) + ";" : ""}${fontStyle?.initFontStyle() ?? ""}""";
+    return cascadingStyleSheets == null
+        ? """$teXViewDefaultStyle ${padding?.getPadding() ?? ""}${margin?.getMargin() ?? ""}${borderRadius?.getRadius() ?? ""}${border?.getBorder() ?? ""}${height != null ? "height: " + getSizeWithUnit(height, sizeUnit) + ";" : ""}${width != null ? "width: " + getSizeWithUnit(width, sizeUnit) + ";" : ""}${elevation != null ? "box-shadow: " + getElevation(elevation, sizeUnit) + ";" : ""}${contentColor != null ? "color: " + getColor(contentColor) + ";" : ""}${backgroundColor != null ? "background-color: " + getColor(backgroundColor) + ";" : ""}${textAlign != null ? "text-align: " + TeXViewTextAlignHelper.getValue(textAlign) + ";" : ""}${fontStyle?.initFontStyle() ?? ""}"""
+        : cascadingStyleSheets;
   }
 }

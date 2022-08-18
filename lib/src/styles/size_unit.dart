@@ -1,18 +1,18 @@
-enum TeXViewSizeUnit { pixels, percent, em, pt }
+enum TeXViewSizeUnit { Pixels, Percent, Em, Pt }
 
 class UnitHelper {
   static String getValue(TeXViewSizeUnit? unit) {
     switch (unit) {
-      case TeXViewSizeUnit.pixels:
+      case TeXViewSizeUnit.Pixels:
         return "px";
 
-      case TeXViewSizeUnit.percent:
+      case TeXViewSizeUnit.Percent:
         return "%";
 
-      case TeXViewSizeUnit.em:
+      case TeXViewSizeUnit.Em:
         return "em";
 
-      case TeXViewSizeUnit.pt:
+      case TeXViewSizeUnit.Pt:
         return "pt";
 
       default:

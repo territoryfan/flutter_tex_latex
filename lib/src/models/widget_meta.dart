@@ -1,4 +1,4 @@
-enum Node { root, internalChild, internalChildren, leaf }
+enum Node { Root, InternalChild, InternalChildren, Leaf }
 
 class TeXViewWidgetMeta {
   final String? id;
@@ -9,21 +9,21 @@ class TeXViewWidgetMeta {
   const TeXViewWidgetMeta({this.id, this.classList, this.tag, this.node});
 
   Map toJson() => {
-        'id': id,
-        'classList': classList,
-        'tag': tag,
-        'node': _getNodeValue(node),
+        'id': this.id,
+        'classList': this.classList,
+        'tag': this.tag,
+        'node': _getNodeValue(this.node),
       };
 
   static String _getNodeValue(Node? node) {
     switch (node) {
-      case Node.root:
+      case Node.Root:
         return "root";
-      case Node.internalChild:
+      case Node.InternalChild:
         return "internal_child";
-      case Node.internalChildren:
+      case Node.InternalChildren:
         return "internal_children";
-      case Node.leaf:
+      case Node.Leaf:
         return "leaf";
       default:
         return "leaf";

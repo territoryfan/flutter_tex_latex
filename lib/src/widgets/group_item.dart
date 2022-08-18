@@ -1,7 +1,7 @@
 import 'package:flutter_tex/flutter_tex.dart';
 import 'package:flutter_tex/src/models/widget_meta.dart';
 
-class TeXViewGroupItem implements TeXViewWidget {
+class TeXViewGroupItem extends TeXViewWidget {
   final String id;
 
   /// A [TeXViewWidget] as child.
@@ -15,21 +15,16 @@ class TeXViewGroupItem implements TeXViewWidget {
   @override
   TeXViewWidgetMeta meta() {
     return TeXViewWidgetMeta(
-        id: id,
+        id: this.id,
         tag: 'div',
         classList: 'tex-view-group-item',
-        node: Node.internalChild);
+        node: Node.InternalChild);
   }
 
   @override
   Map toJson() => {
         'meta': meta().toJson(),
-        'data': child.toJson(),
-        'rippleEffect': rippleEffect ?? true,
+        'data': this.child.toJson(),
+        'rippleEffect': this.rippleEffect ?? true,
       };
-
-  @override
-  void onTapCallback(String id) {
-    child.onTapCallback(id);
-  }
 }
