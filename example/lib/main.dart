@@ -28,7 +28,7 @@ class TeXViewFullExample extends StatefulWidget {
 class _TeXViewFullExampleState extends State<TeXViewFullExample> {
   int radVal = 0;
 
-  late TeXViewRenderingEngine renderingEngine;
+  TeXViewRenderingEngine renderingEngine;
 
   @override
   Widget build(BuildContext context) {
