@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tex/flutter_tex.dart';
 import 'package:flutter_tex_example/tex_view_document_example.dart';
-import 'package:flutter_tex_example/tex_view_fonts_example.dart';
-import 'package:flutter_tex_example/tex_view_image_video_example.dart';
-import 'package:flutter_tex_example/tex_view_ink_well_example.dart';
-import 'package:flutter_tex_example/tex_view_markdown_example.dart';
-import 'package:flutter_tex_example/tex_view_quiz_example.dart';
 
 main() {
   runApp(const FlutterTeXExample());
 }
 
 class FlutterTeXExample extends StatelessWidget {
-  const FlutterTeXExample({Key? key}) : super(key: key);
+  const FlutterTeXExample({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +19,7 @@ class FlutterTeXExample extends StatelessWidget {
 }
 
 class TeXViewFullExample extends StatefulWidget {
-  const TeXViewFullExample({Key? key}) : super(key: key);
+  const TeXViewFullExample({Key key}) : super(key: key);
 
   @override
   _TeXViewFullExampleState createState() => _TeXViewFullExampleState();
@@ -62,7 +57,7 @@ class _TeXViewFullExampleState extends State<TeXViewFullExample> {
             groupValue: radVal,
             onChanged: (val) {
               setState(() {
-                radVal = val!;
+                radVal = val;
               });
             },
             title: const Text("Katex"),
@@ -73,7 +68,7 @@ class _TeXViewFullExampleState extends State<TeXViewFullExample> {
             groupValue: radVal,
             onChanged: (val) {
               setState(() {
-                radVal = val!;
+                radVal = val;
               });
             },
             title: const Text("MathJax"),
@@ -85,38 +80,8 @@ class _TeXViewFullExampleState extends State<TeXViewFullExample> {
           ),
           getExampleButton(
               context,
-              'Quiz Example',
-              TeXViewQuizExample(
-                renderingEngine: renderingEngine,
-              )),
-          getExampleButton(
-              context,
               'TeX Examples',
               TeXViewDocumentExamples(
-                renderingEngine: renderingEngine,
-              )),
-          getExampleButton(
-              context,
-              'Markdown Examples',
-              TeXViewMarkdownExamples(
-                renderingEngine: renderingEngine,
-              )),
-          getExampleButton(
-              context,
-              'Custom Fonts Examples',
-              TeXViewFontsExamples(
-                renderingEngine: renderingEngine,
-              )),
-          getExampleButton(
-              context,
-              'Image & Video Example',
-              TeXViewImageVideoExample(
-                renderingEngine: renderingEngine,
-              )),
-          getExampleButton(
-              context,
-              'Inkwell Example',
-              TeXViewInkWellExample(
                 renderingEngine: renderingEngine,
               )),
         ],
