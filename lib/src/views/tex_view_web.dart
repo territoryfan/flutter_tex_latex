@@ -12,7 +12,7 @@ import 'package:flutter_tex/src/utils/fake_ui.dart'
     if (dart.library.html) 'dart:ui' as ui;
 
 class TeXViewState extends State<TeXView> {
-  String? _lastData;
+  String _lastData;
   double viewHeight = 1;
   String _viewId = UniqueKey().toString();
 

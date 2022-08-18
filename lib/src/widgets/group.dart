@@ -5,32 +5,32 @@ import 'package:flutter_tex/src/models/widget_meta.dart';
 import 'package:flutter_tex/src/utils/style_utils.dart';
 
 class TeXViewGroup extends TeXViewWidget {
-  final String? id;
+  final String id;
 
   /// A list of [TeXViewWidget].
   final List<TeXViewGroupItem> children;
 
   /// On Tap Callback when a child is tapped.
-  final Function(String id)? onTap;
+  final Function(String id) onTap;
 
   /// On Tap Callback when a child is tapped.
-  final Function(List<String> ids)? onItemsSelection;
+  final Function(List<String> ids) onItemsSelection;
 
   /// Style TeXView Widget with [TeXViewStyle].
-  final TeXViewStyle? style;
+  final TeXViewStyle style;
 
   /// Style TeXView Widget with [TeXViewStyle].
-  final TeXViewStyle? selectedItemStyle;
+  final TeXViewStyle selectedItemStyle;
 
   /// Style TeXView Widget with [TeXViewStyle].
-  final TeXViewStyle? normalItemStyle;
+  final TeXViewStyle normalItemStyle;
 
   final bool single;
 
   const TeXViewGroup(
       {this.id,
-      required this.children,
-      required this.onTap,
+      this.children,
+      this.onTap,
       this.style,
       this.selectedItemStyle,
       this.normalItemStyle})
@@ -39,8 +39,8 @@ class TeXViewGroup extends TeXViewWidget {
 
   const TeXViewGroup.multipleSelection(
       {this.id,
-      required this.children,
-      required this.onItemsSelection,
+      this.children,
+      this.onItemsSelection,
       this.style,
       this.selectedItemStyle,
       this.normalItemStyle})
@@ -57,9 +57,9 @@ class TeXViewGroup extends TeXViewWidget {
   void onTapManager(String id) {
     if (single) {
       for (TeXViewGroupItem child in this.children)
-        if (child.id == id) this.onTap!(id);
+        if (child.id == id) this.onTap(id);
     } else {
-      this.onItemsSelection!((jsonDecode(id) as List<dynamic>).cast<String>());
+      this.onItemsSelection((jsonDecode(id) as List<dynamic>).cast<String>());
     }
   }
 

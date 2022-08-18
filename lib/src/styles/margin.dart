@@ -3,24 +3,24 @@ import 'package:flutter_tex/src/utils/style_utils.dart';
 
 ///TeXViewMargin to manage different types of margin of TeXView.
 class TeXViewMargin {
-  final TeXViewSizeUnit? sizeUnit;
+  final TeXViewSizeUnit sizeUnit;
 
   /// Top margin.
-  final int? top;
+  final int top;
 
   /// Bottom margin.
-  final int? bottom;
+  final int bottom;
 
   /// Right margin.
-  final int? right;
+  final int right;
 
   /// Left margin.
-  final int? left;
+  final int left;
 
   /// All sides margin and it'll override top, bottom,right and left margins.
-  final int? all;
+  final int all;
 
-  final String? zeroAuto;
+  final String zeroAuto;
 
   const TeXViewMargin.all(this.all, {this.sizeUnit})
       : this.zeroAuto = null,

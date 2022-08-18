@@ -3,25 +3,25 @@ import 'package:flutter_tex/src/utils/style_utils.dart';
 
 class TeXViewFontStyle {
   /// Custom font name registered as [TeXViewFont]
-  final String? fontFamily;
+  final String fontFamily;
 
   /// Font size
-  final int? fontSize;
+  final int fontSize;
 
   /// Font weight
-  final TeXViewFontWeight? fontWeight;
+  final TeXViewFontWeight fontWeight;
 
   /// Font size unit.
-  final TeXViewSizeUnit? sizeUnit;
+  final TeXViewSizeUnit sizeUnit;
 
   TeXViewFontStyle(
       {this.fontSize, this.fontFamily, this.sizeUnit, this.fontWeight});
 
   String initFontStyle() {
-    return "${fontSize != null ? "font-size: " + getSizeWithUnit(fontSize, sizeUnit) + ";" : ""}${fontFamily != null ? "font-family: " + fontFamily! + ";" : ""}${fontWeight != null ? "font-weight: " + _getFontWeightValue(fontWeight) + ";" : ""}";
+    return "${fontSize != null ? "font-size: " + getSizeWithUnit(fontSize, sizeUnit) + ";" : ""}${fontFamily != null ? "font-family: " + fontFamily + ";" : ""}${fontWeight != null ? "font-weight: " + _getFontWeightValue(fontWeight) + ";" : ""}";
   }
 
-  static String _getFontWeightValue(TeXViewFontWeight? teXViewFontWeight) {
+  static String _getFontWeightValue(TeXViewFontWeight teXViewFontWeight) {
     switch (teXViewFontWeight) {
       case TeXViewFontWeight.normal:
         return "normal";

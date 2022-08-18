@@ -1,10 +1,10 @@
 enum Node { Root, InternalChild, InternalChildren, Leaf }
 
 class TeXViewWidgetMeta {
-  final String? id;
-  final String? classList;
-  final String? tag;
-  final Node? node;
+  final String id;
+  final String classList;
+  final String tag;
+  final Node node;
 
   const TeXViewWidgetMeta({this.id, this.classList, this.tag, this.node});
 
@@ -15,7 +15,7 @@ class TeXViewWidgetMeta {
         'node': _getNodeValue(this.node),
       };
 
-  static String _getNodeValue(Node? node) {
+  static String _getNodeValue(Node node) {
     switch (node) {
       case Node.Root:
         return "root";

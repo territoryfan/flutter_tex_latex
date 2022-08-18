@@ -7,10 +7,10 @@ class TeXViewGroupItem extends TeXViewWidget {
   /// A [TeXViewWidget] as child.
   final TeXViewWidget child;
 
-  final bool? rippleEffect;
+  final bool rippleEffect;
 
   const TeXViewGroupItem(
-      {required this.id, required this.child, this.rippleEffect});
+      {this.id, this.child, this.rippleEffect});
 
   @override
   TeXViewWidgetMeta meta() {

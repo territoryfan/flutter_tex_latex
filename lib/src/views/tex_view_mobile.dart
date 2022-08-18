@@ -5,12 +5,12 @@ import 'package:flutter_tex/src/utils/core_utils.dart';
 import 'package:webview_flutter_plus/webview_flutter_plus.dart';
 
 class TeXViewState extends State<TeXView> with AutomaticKeepAliveClientMixin {
-  WebViewPlusController? _controller;
+  WebViewPlusController _controller;
 
   static const double minH = 1;
 
   double _height = minH;
-  String? _lastData;
+  String _lastData;
   bool _pageLoaded = false;
 
   @override
@@ -54,7 +54,7 @@ class TeXViewState extends State<TeXView> with AutomaticKeepAliveClientMixin {
       JavascriptChannel(
           name: 'TeXViewRenderedCallback',
           onMessageReceived: (_) async {
-            double height = await _controller!.getHeight();
+            double height = await _controller.getHeight();
             if (this._height != height)
               setState(() {
                 this._height = height;
@@ -72,7 +72,7 @@ class TeXViewState extends State<TeXView> with AutomaticKeepAliveClientMixin {
   void _buildTeXView() {
     if (_pageLoaded && _controller != null && getRawData(widget) != _lastData) {
       if (widget.loadingWidgetBuilder != null) _height = minH;
-      _controller!.webViewController.evaluateJavascript(
+      _controller.webViewController.evaluateJavascript(
           "var jsonData = " + getRawData(widget) + ";initView(jsonData);");
       this._lastData = getRawData(widget);
     }

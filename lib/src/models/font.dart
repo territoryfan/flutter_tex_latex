@@ -5,7 +5,7 @@ class TeXViewFont {
   /// Font location e.g. 'fonts/font_name.ttf'
   final String src;
 
-  const TeXViewFont({required this.fontFamily, required this.src});
+  const TeXViewFont({this.fontFamily, this.src});
 
   Map toJson() => {
         'font_family': this.fontFamily,

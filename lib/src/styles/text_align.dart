@@ -1,7 +1,7 @@
 enum TeXViewTextAlign { Center, Left, Right, Justify }
 
 class TeXViewTextAlignHelper {
-  static String getValue(TeXViewTextAlign? teXViewTextAlign) {
+  static String getValue(TeXViewTextAlign teXViewTextAlign) {
     switch (teXViewTextAlign) {
       case TeXViewTextAlign.Center:
         return "center";

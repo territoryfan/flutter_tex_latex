@@ -3,22 +3,22 @@ import 'package:flutter_tex/src/utils/style_utils.dart';
 
 ///TeXViewPadding to manage different types of padding of TeXView.
 class TeXViewPadding {
-  final TeXViewSizeUnit? sizeUnit;
+  final TeXViewSizeUnit sizeUnit;
 
   /// Top padding.
-  final int? top;
+  final int top;
 
   /// Bottom padding.
-  final int? bottom;
+  final int bottom;
 
   /// Right padding.
-  final int? right;
+  final int right;
 
   /// Left padding.
-  final int? left;
+  final int left;
 
   /// All sides padding and it'll override top, bottom,right and left padding.
-  final int? all;
+  final int all;
 
   const TeXViewPadding.all(this.all, {this.sizeUnit})
       : this.top = null,

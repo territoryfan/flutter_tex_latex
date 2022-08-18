@@ -9,16 +9,16 @@ class TeXViewInkWell extends TeXViewWidget {
   final TeXViewWidget child;
 
   /// Style TeXView Widget with [TeXViewStyle].
-  final TeXViewStyle? style;
+  final TeXViewStyle style;
 
-  final bool? rippleEffect;
+  final bool rippleEffect;
 
   /// On Tap Callback when a tap is triggered.
-  final Function(String id)? onTap;
+  final Function(String id) onTap;
 
   const TeXViewInkWell(
-      {required this.child,
-      required this.id,
+      {this.child,
+      this.id,
       this.onTap,
       this.rippleEffect,
       this.style});
@@ -34,7 +34,7 @@ class TeXViewInkWell extends TeXViewWidget {
 
   @override
   void onTapManager(String id) {
-    if (this.id == id) this.onTap!(id);
+    if (this.id == id) this.onTap(id);
   }
 
   @override

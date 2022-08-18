@@ -3,15 +3,15 @@ import 'package:flutter_tex/src/models/widget_meta.dart';
 import 'package:flutter_tex/src/utils/style_utils.dart';
 
 class TeXViewContainer extends TeXViewWidget {
-  final String? id;
+  final String id;
 
   /// A [TeXViewWidget] as child.
   final TeXViewWidget child;
 
   /// Style TeXView Widget with [TeXViewStyle].
-  final TeXViewStyle? style;
+  final TeXViewStyle style;
 
-  const TeXViewContainer({this.id, required this.child, this.style});
+  const TeXViewContainer({this.id, this.child, this.style});
 
   @override
   TeXViewWidgetMeta meta() {

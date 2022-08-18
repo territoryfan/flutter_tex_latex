@@ -3,7 +3,7 @@ import 'package:flutter_tex/src/models/widget_meta.dart';
 import 'package:flutter_tex/src/utils/style_utils.dart';
 
 class TeXViewImage extends TeXViewWidget {
-  final String? id;
+  final String id;
 
   /// Uri for Image.
   final String imageUri;

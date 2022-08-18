@@ -4,11 +4,11 @@ import 'package:flutter_tex/flutter_tex.dart';
 import 'package:flutter_tex/src/utils/style_utils.dart';
 
 class TeXViewBorder {
-  final TeXViewBorderDecoration? top;
-  final TeXViewBorderDecoration? bottom;
-  final TeXViewBorderDecoration? right;
-  final TeXViewBorderDecoration? left;
-  final TeXViewBorderDecoration? all;
+  final TeXViewBorderDecoration top;
+  final TeXViewBorderDecoration bottom;
+  final TeXViewBorderDecoration right;
+  final TeXViewBorderDecoration left;
+  final TeXViewBorderDecoration all;
 
   const TeXViewBorder.all(this.all)
       : this.top = null,
@@ -27,9 +27,9 @@ class TeXViewBorder {
 }
 
 class TeXViewBorderDecoration {
-  final int? borderWidth;
-  final TeXViewBorderStyle? borderStyle;
-  final Color? borderColor;
+  final int borderWidth;
+  final TeXViewBorderStyle borderStyle;
+  final Color borderColor;
 
   const TeXViewBorderDecoration(
       {this.borderWidth, this.borderStyle, this.borderColor});
@@ -39,7 +39,7 @@ class TeXViewBorderDecoration {
   }
 
   static String _getTeXViewBorderStyleValue(
-      TeXViewBorderStyle? teXViewBorderStyle) {
+      TeXViewBorderStyle teXViewBorderStyle) {
     switch (teXViewBorderStyle) {
       case TeXViewBorderStyle.None:
         return "none";
@@ -81,12 +81,12 @@ class TeXViewBorderDecoration {
 }
 
 class TeXViewBorderRadius {
-  final TeXViewSizeUnit? sizeUnit;
-  final int? topLeft;
-  final int? topRight;
-  final int? bottomRight;
-  final int? bottomLeft;
-  final int? all;
+  final TeXViewSizeUnit sizeUnit;
+  final int topLeft;
+  final int topRight;
+  final int bottomRight;
+  final int bottomLeft;
+  final int all;
 
   const TeXViewBorderRadius.all(this.all, {this.sizeUnit})
       : this.topLeft = null,
@@ -108,7 +108,7 @@ class TeXViewBorderRadius {
         : """border-radius:${_getRadiusValue(topLeft)} ${_getRadiusValue(topRight)} ${_getRadiusValue(bottomRight)} ${_getRadiusValue(bottomLeft)};""";
   }
 
-  String _getRadiusValue(int? value) {
+  String _getRadiusValue(int value) {
     return "${(value ?? 0).toString() + "${UnitHelper.getValue(sizeUnit)}"}";
   }
 }
