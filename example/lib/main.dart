@@ -26,15 +26,16 @@ class TeXViewFullExample extends StatefulWidget {
 }
 
 class _TeXViewFullExampleState extends State<TeXViewFullExample> {
-  int radVal = 0;
+  // int radVal = 0;
 
   TeXViewRenderingEngine renderingEngine;
 
   @override
   Widget build(BuildContext context) {
-    renderingEngine = radVal == 0
-        ? const TeXViewRenderingEngine.katex()
-        : const TeXViewRenderingEngine.mathjax();
+    // renderingEngine = radVal == 0
+    //     ? const TeXViewRenderingEngine.katex()
+    //     : const TeXViewRenderingEngine.mathjax();
+    renderingEngine = const TeXViewRenderingEngine.katex();
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -52,28 +53,17 @@ class _TeXViewFullExampleState extends State<TeXViewFullExample> {
               height: 200,
             ),
           ),
-          RadioListTile<int>(
-            value: 0,
-            groupValue: radVal,
-            onChanged: (val) {
-              setState(() {
-                radVal = val;
-              });
-            },
-            title: const Text("Katex"),
-            subtitle: const Text("RenderingEngine for Fast Rendering"),
-          ),
-          RadioListTile<int>(
-            value: 1,
-            groupValue: radVal,
-            onChanged: (val) {
-              setState(() {
-                radVal = val;
-              });
-            },
-            title: const Text("MathJax"),
-            subtitle: const Text("RenderingEngine for Quality Rendering"),
-          ),
+          // RadioListTile<int>(
+          //   value: 0,
+          //   groupValue: radVal,
+          //   onChanged: (val) {
+          //     setState(() {
+          //       radVal = val;
+          //     });
+          //   },
+          //   title: const Text("Katex"),
+          //   subtitle: const Text("RenderingEngine for Fast Rendering"),
+          // ),
           const Divider(
             height: 30,
             color: Colors.transparent,
