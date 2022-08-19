@@ -177,7 +177,7 @@
     },
     {
       "name": "webview_flutter_platform_interface",
-      "rootUri": "file:///Users/andy/develop/Flutter/SDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter_platform_interface-1.9.1",
+      "rootUri": "file:///Users/andy/develop/Flutter/SDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter_platform_interface-1.9.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -200,7 +200,7 @@
       "languageVersion": "2.10"
     }
   ],
-  "generated": "2022-08-18T16:34:59.609481Z",
+  "generated": "2022-08-19T15:30:42.547143Z",
   "generator": "pub",
   "generatorVersion": "2.17.6"
 }
