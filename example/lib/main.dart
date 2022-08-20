@@ -33,9 +33,6 @@ class _TeXViewFullExampleState extends State<TeXViewFullExample> {
 
   @override
   Widget build(BuildContext context) {
-    // renderingEngine = radVal == 0
-    //     ? const TeXViewRenderingEngine.katex()
-    //     : const TeXViewRenderingEngine.mathjax();
     renderingEngine = const TeXViewRenderingEngine.katex();
 
     return Scaffold(

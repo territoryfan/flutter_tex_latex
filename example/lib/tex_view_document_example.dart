@@ -127,7 +127,6 @@ class TeXViewDocumentExamples extends StatelessWidget {
           TeXExample.chemistryEquations,
           TeXExample.matrix,
           // ...[TeXExample.others],
-          // if (renderingEngine.name == 'mathjax') ...[TeXExample.others]
         ]),
         style: const TeXViewStyle(
           margin: TeXViewMargin.all(10),
