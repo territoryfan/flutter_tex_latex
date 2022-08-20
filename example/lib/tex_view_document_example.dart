@@ -105,7 +105,7 @@ class TeXViewDocumentExamples extends StatelessWidget {
   final TeXViewRenderingEngine renderingEngine;
 
   const TeXViewDocumentExamples(
-      {Key key, this.renderingEngine = const TeXViewRenderingEngine.katex()})
+      {Key key, this.renderingEngine = const TeXViewRenderingEngine.mathjax()})
       : super(key: key);
 
   @override
@@ -126,7 +126,7 @@ class TeXViewDocumentExamples extends StatelessWidget {
           TeXExample.bohrRadius,
           TeXExample.chemistryEquations,
           TeXExample.matrix,
-          if (renderingEngine.name == 'mathjax') ...[TeXExample.others]
+          TeXExample.others
         ]),
         style: const TeXViewStyle(
           margin: TeXViewMargin.all(10),
