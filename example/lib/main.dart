@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tex/flutter_tex.dart';
 import 'package:flutter_tex_example/tex_view_document_example.dart';
+import 'package:flutter_tex_example/tex_view_quiz_example.dart';
 
 main() {
   runApp(const FlutterTeXExample());
@@ -32,9 +33,6 @@ class _TeXViewFullExampleState extends State<TeXViewFullExample> {
 
   @override
   Widget build(BuildContext context) {
-    // renderingEngine = radVal == 0
-    //     ? const TeXViewRenderingEngine.katex()
-    //     : const TeXViewRenderingEngine.mathjax();
     renderingEngine = const TeXViewRenderingEngine.mathjax();
     return Scaffold(
       backgroundColor: Colors.white,
@@ -57,11 +55,17 @@ class _TeXViewFullExampleState extends State<TeXViewFullExample> {
             color: Colors.transparent,
           ),
           getExampleButton(
-              context,
-              'TeX Examples',
-              TeXViewDocumentExamples(
-                renderingEngine: renderingEngine,
-              )),
+            context,
+            'Quiz Example',
+            TeXViewQuizExample(
+              renderingEngine: renderingEngine,
+            )),
+          getExampleButton(
+            context,
+            'TeX Examples',
+            TeXViewDocumentExamples(
+              renderingEngine: renderingEngine,
+            )),
         ],
       ),
     );

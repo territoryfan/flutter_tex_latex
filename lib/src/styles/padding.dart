@@ -32,7 +32,7 @@ class TeXViewPadding {
 
   /// It'll provide CSS margin code.
   String getPadding() {
-    if (this.all != null) {
+    if (all != null) {
       return "padding: ${getSizeWithUnit(all, sizeUnit)};";
     } else {
       return """padding: ${getSizeWithUnit(top, sizeUnit)} ${getSizeWithUnit(right, sizeUnit)} ${getSizeWithUnit(bottom, sizeUnit)} ${getSizeWithUnit(left, sizeUnit)};""";

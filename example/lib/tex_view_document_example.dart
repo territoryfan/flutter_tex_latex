@@ -84,14 +84,14 @@ class TeXExample {
             borderRadius: TeXViewBorderRadius.all(10),
             border: TeXViewBorder.all(TeXViewBorderDecoration(
                 borderWidth: 2,
-                borderStyle: TeXViewBorderStyle.Groove,
+                borderStyle: TeXViewBorderStyle.groove,
                 borderColor: Colors.green))),
         children: [
           TeXViewDocument(title,
               style: const TeXViewStyle(
                   padding: TeXViewPadding.all(10),
                   borderRadius: TeXViewBorderRadius.all(10),
-                  textAlign: TeXViewTextAlign.Center,
+                  textAlign: TeXViewTextAlign.center,
                   width: 250,
                   margin: TeXViewMargin.zeroAuto(),
                   backgroundColor: Colors.green)),
@@ -135,7 +135,7 @@ class TeXViewDocumentExamples extends StatelessWidget {
           border: TeXViewBorder.all(
             TeXViewBorderDecoration(
                 borderColor: Colors.blue,
-                borderStyle: TeXViewBorderStyle.Solid,
+                borderStyle: TeXViewBorderStyle.solid,
                 borderWidth: 5),
           ),
           backgroundColor: Colors.white,

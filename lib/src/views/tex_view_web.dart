@@ -14,7 +14,7 @@ import 'package:flutter_tex/src/utils/fake_ui.dart'
 class TeXViewState extends State<TeXView> {
   String _lastData;
   double viewHeight = 1;
-  String _viewId = UniqueKey().toString();
+  final String _viewId = UniqueKey().toString();
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +39,7 @@ class TeXViewState extends State<TeXView> {
 
   @override
   void initState() {
+    // ignore: avoid_print
     print("viewid $_viewId");
 
     WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {

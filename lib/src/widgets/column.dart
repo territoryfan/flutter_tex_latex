@@ -16,10 +16,10 @@ class TeXViewColumn extends TeXViewWidget {
   @override
   TeXViewWidgetMeta meta() {
     return TeXViewWidgetMeta(
-        id: this.id,
+        id: id,
         tag: 'div',
         classList: 'tex-view-column',
-        node: Node.InternalChildren);
+        node: Node.internalChildren);
   }
 
   @override
