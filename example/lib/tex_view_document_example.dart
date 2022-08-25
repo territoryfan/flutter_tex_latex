@@ -64,17 +64,42 @@ class TeXExample {
            \end{aligned}
            $$""");
 
-  static TeXViewWidget others = _teXViewWidget(r"<h4> Others </h4>", r"""<p>    
-    $$ \oint_C {E \cdot d\ell = - \frac{d}{{dt}}} \int_S {B_n dA} $$<br>
-    
-     $$
-     y = \frac{{n!}}{{k!\left( {n - k} \right)!}}p^k q^{n - k}  = \left( {\begin{array}{*{20}c}
-              n  \\
-              k  \\
-            \end{array}} \right)p^k q^{n - k} 
-     $$
+  static TeXViewWidget others = _teXViewWidget(r"<h4> Others </h4>", r"""<p><br />
+  <span class="math-content" data-math="\sqrt{12312312312312312}\\DRIFT{123312}我来试试你会不会换行，不会换的话怎么搞 \sqrt{NAOH化学我都忘记了二氧化氮是什么红棕色气体，二氧化碳是无色气体}\\\left\{ \begin{array}{l} {1}\\{2} \end{array}\right.这啥也我也不认识，靠老师自己换行了" style="color:#000000; font-size:14px; text-decoration:none">$\sqrt{12312312312312312}\\DRIFT{123312}我来试试你会不会换行，不会换的话怎么搞 \sqrt{NAOH化学我都忘记了二氧化氮是什么红棕色气体，二氧化碳是无色气体}\\\left\{ \begin{array}{l} {1}\\{2} \end{array}\right.这啥也我也不认识，靠老师自己换行了$</span></p>
 
-    </p>""");
+    <p align="left" style="text-align:left">&nbsp;</p>
+
+    <figure class="easyimage easyimage-full"><strong><img alt="" sizes="100vw" src="//va-papers.oss-cn-hangzhou.aliyuncs.com/editor/aeea/a234/4aaf/e7f28416-faa4-432a-aeea-a962e77f0d5c" width="596" /></strong>
+
+    <figcaption></figcaption>
+    </figure>
+
+    <p>&nbsp;</p>"""
+  );
+
+  static TeXViewWidget phoneLatex = _teXViewWidget(r"<h4> phone_latex </h4>", r"""<p><br />
+    <span class="math-content" data-math="\sqrt{12312312312312312}\\DRIFT{123312}我来试试你会不会换行，不会换的话怎么搞 \sqrt{NAOH化学我都忘记了二氧化氮是什么红棕色气体，二氧化碳是无色气体}\\\left\{ \begin{array}{l} {1}\\{2} \end{array}\right.这啥也我也不认识，靠老师自己换行了" style="color:#000000; font-size:14px; text-decoration:none">$\sqrt{12312312312312312}\\DRIFT{123312}我来试试你会不会换行，不会换的话怎么搞 \sqrt{NAOH化学我都忘记了二氧化氮是什么红棕色气体，二氧化碳是无色气体}\\\left\{ \begin{array}{l} {1}\\{2} \end{array}\right.这啥也我也不认识，靠老师自己换行了$</span></p>
+
+    <p align="left" style="text-align:left">&nbsp;</p>
+
+    <figure class="easyimage easyimage-full"><strong><img alt="" sizes="100vw" src="//va-papers.oss-cn-hangzhou.aliyuncs.com/editor/aeea/a234/4aaf/e7f28416-faa4-432a-aeea-a962e77f0d5c" width="596" /></strong>
+
+    <figcaption></figcaption>
+    </figure>
+
+    <p>&nbsp;</p>""");
+  
+  // static TeXViewWidget others = _teXViewWidget(r"<h4> Others </h4>", r"""<p>    
+  //   $$ \oint_C {E \cdot d\ell = - \frac{d}{{dt}}} \int_S {B_n dA} $$<br>
+    
+  //    $$
+  //    y = \frac{{n!}}{{k!\left( {n - k} \right)!}}p^k q^{n - k}  = \left( {\begin{array}{*{20}c}
+  //             n  \\
+  //             k  \\
+  //           \end{array}} \right)p^k q^{n - k} 
+  //    $$
+
+  //   </p>""");
 
   static TeXViewWidget _teXViewWidget(String title, String body) {
     return TeXViewColumn(
@@ -126,7 +151,8 @@ class TeXViewDocumentExamples extends StatelessWidget {
           TeXExample.bohrRadius,
           TeXExample.chemistryEquations,
           TeXExample.matrix,
-          TeXExample.others
+          TeXExample.others,
+          TeXExample.phoneLatex
         ]),
         style: const TeXViewStyle(
           margin: TeXViewMargin.all(10),
